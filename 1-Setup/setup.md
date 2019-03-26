@@ -34,10 +34,12 @@ To create an EKS cluster you will need to have the following:
 Instructions for installing the aws cli can be found here:  
 [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)  
 
-After installing the aws cli you will need to configure it using the command 'aws configure  '
-This will require your IAM authentication token, which you can find in the aws portal  
+After installing the aws cli you can configure it by running the following:  
+ `aws configure`
+Configuring the AWS cli will require your IAM authentication token.  
 
-You can test your user authentication with the command 'aws sts get-caller-identity'   
+You can test your authentication with this command:  
+`aws sts get-caller-identity`   
 
 ## 1.2. kubectl 
 
