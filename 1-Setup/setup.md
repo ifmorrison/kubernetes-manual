@@ -1,25 +1,25 @@
 <!-- TOC -->
 
-- [Installing prerequisites](#installing-prerequisites)
-    - [aws cli](#aws-cli)
-    - [kubectl](#kubectl)
-    - [aws-iam-authenticator](#aws-iam-authenticator)
-- [Creating a cluster](#creating-a-cluster)
-    - [AWS Getting Started method](#aws-getting-started-method)
-    - [Terraform method](#terraform-method)
-    - [eksctl method](#eksctl-method)
-- [Authenticating to the cluster](#authenticating-to-the-cluster)
-    - [AWS Getting Started or eksctl methods](#aws-getting-started-or-eksctl-methods)
-    - [Terraform:](#terraform)
-- [Allow worker nodes to connect to the cluster](#allow-worker-nodes-to-connect-to-the-cluster)
-    - [AWS Getting Started](#aws-getting-started)
-    - [Terraform](#terraform)
-    - [eksctl](#eksctl)
-- [Finish](#finish)
+- [1. Installing prerequisites](#1-installing-prerequisites)
+    - [1.1. aws cli](#11-aws-cli)
+    - [1.2. kubectl](#12-kubectl)
+    - [1.3. aws-iam-authenticator](#13-aws-iam-authenticator)
+- [2. Creating a cluster](#2-creating-a-cluster)
+    - [2.1. AWS Getting Started method](#21-aws-getting-started-method)
+    - [2.2. Terraform method](#22-terraform-method)
+    - [2.3. eksctl method](#23-eksctl-method)
+- [3. Authenticating to the cluster](#3-authenticating-to-the-cluster)
+    - [3.1. AWS Getting Started or eksctl methods](#31-aws-getting-started-or-eksctl-methods)
+    - [3.2. Terraform:](#32-terraform)
+- [4. Allow worker nodes to connect to the cluster](#4-allow-worker-nodes-to-connect-to-the-cluster)
+    - [4.1. AWS Getting Started](#41-aws-getting-started)
+    - [4.2. Terraform](#42-terraform)
+    - [4.3. eksctl](#43-eksctl)
+- [5. Finish](#5-finish)
 
 <!-- /TOC -->
 
-# Installing prerequisites  
+# 1. Installing prerequisites  
 
 To create an EKS cluster you will need to have the following:
 
@@ -27,7 +27,7 @@ To create an EKS cluster you will need to have the following:
 - kubectl
 - aws-iam-authenticator
 
-## aws cli 
+## 1.1. aws cli 
 
 Instructions for installing the aws cli can be found here:  
 [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)  
@@ -37,39 +37,39 @@ This will require your IAM authentication token, which you can find in the aws p
 
 You can test your user authentication with the command 'aws sts get-caller-identity'   
 
-## kubectl 
+## 1.2. kubectl 
 
 Instructions for installing kubectl can be found at the following link:  
 [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)  
 
 Note: You do not have to configure kubectl at this stage, just installing it is enough.  
 
-## aws-iam-authenticator  
+## 1.3. aws-iam-authenticator  
 
 Instructions for installing aws-iam-authenticator can be found at the following link:  
 
 [Installing aws-iam-authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)  
 
 
-# Creating a cluster  
+# 2. Creating a cluster  
 
 There are several options for creating an EKS cluster.
 You can choose any method from below:
 
-## AWS Getting Started method  
+## 2.1. AWS Getting Started method  
 
 The AWS Getting Started method can be found here:  
 [Getting Started with Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)  
 
 This method consists of deploying two CloudFormation stacks. The first stack creates a VPC, and the second stack creates the cluster and the worker nodes. The defaults for the stacks are find, although you may want to alter the instance type and autoscale settings.  
 
-## Terraform method
+## 2.2. Terraform method
 
 The AWS terraform provider provides resources for managing EKS clusters.  
 An example of using terraform to create an EKS cluster can be found here:  
 [eks-terraform](eks-terraform/)
 
-## eksctl method
+## 2.3. eksctl method
 
 eksctl is a cli utility for deploying and managing eks clusters  
 Installation and usage instructions for this utility can be found here:  
@@ -77,18 +77,18 @@ Installation and usage instructions for this utility can be found here:
 [https://aws.amazon.com/blogs/opensource/eksctl-eks-cluster-one-command/](Amazon EKS Cluster with One Command)
 
 
-# Authenticating to the cluster
+# 3. Authenticating to the cluster
 
 Authentication secrets are stored in $HOME/.kube/config  
 
-## AWS Getting Started or eksctl methods  
+## 3.1. AWS Getting Started or eksctl methods  
 
 The aws cli will update the local authentication secrets with this command:  
 `aws eks update-kubeconfig --name clustername`  
 Test your connection to the cluster:    
 `kubectl cluster-info`  
 
-## Terraform: 
+## 3.2. Terraform: 
 
 Authentication details are available as a terraform output.  
 
@@ -98,26 +98,26 @@ Test your connection to the cluster:
 `kubectl cluster-info`
 
 
-# Allow worker nodes to connect to the cluster
+# 4. Allow worker nodes to connect to the cluster
 
 Finally, the new cluster must be updated its IAM role details so that worker nodes can join the cluster.
 Until this is done no worker nodes will be available, so no containers can be run.
 
-## AWS Getting Started 
+## 4.1. AWS Getting Started 
 This step is fully documented in the AWS Getting Started guide
 
-## Terraform
+## 4.2. Terraform
 
 First export the configmap  
 `terraform output configmap > configmap.yml`  
 Then apply it to the cluster  
 `kubectl apply -f ./configmap.yml`  
 
-## eksctl
+## 4.3. eksctl
 
 eksctl applies the configuration automatically, so nothing further is necessary
 
-# Finish
+# 5. Finish
 
 Your worker nodes should be visible now. 
 
