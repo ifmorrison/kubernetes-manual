@@ -56,6 +56,7 @@ Instructions for installing aws-iam-authenticator can be found at the following 
 [Installing aws-iam-authenticator](https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)  
 
 
+
 # 2. Creating a cluster  
 
 There are several options for creating an EKS cluster.
@@ -66,13 +67,13 @@ You can choose any method from below:
 The AWS Getting Started method can be found here:  
 [Getting Started with Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)  
 
-This method consists of deploying two CloudFormation stacks. The first stack creates a VPC, and the second stack creates the cluster and the worker nodes. The defaults for the stacks are find, although you may want to alter the instance type and autoscale settings.  
+This method consists of deploying two CloudFormation stacks. The first stack creates a VPC, and the second stack creates the cluster and the worker nodes. The defaults for the stacks are fine, although you may want to alter the instance type and autoscale settings.  
 
 ## 2.2. Terraform method
 
 The AWS terraform provider provides resources for managing EKS clusters.  
 This tutorial contains example terraform templates in this section:  
-[Example terraform templates can be found here]
+[Example terraform templates can be found here](eks-terraform/)
 Your aws provider information will be taken from your local aws cli setup
 
 ## 2.3. eksctl method
