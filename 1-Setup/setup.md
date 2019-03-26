@@ -1,5 +1,7 @@
+# Setup
 <!-- TOC -->
 
+- [Setup](#setup)
 - [1. Installing prerequisites](#1-installing-prerequisites)
     - [1.1. aws cli](#11-aws-cli)
     - [1.2. kubectl](#12-kubectl)
@@ -101,7 +103,7 @@ Test your connection to the cluster:
 
 # 4. Allow worker nodes to connect to the cluster
 
-Finally, the new cluster must be updated its IAM role details so that worker nodes can join the cluster.
+The new cluster must be provided its IAM role details so that worker nodes can join the cluster.
 Until this is done no worker nodes will be available, so no containers can be run.
 
 ## 4.1. AWS Getting Started 
