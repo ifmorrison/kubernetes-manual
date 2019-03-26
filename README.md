@@ -10,6 +10,13 @@ This repository provides an overview and introductory tutorial for AWS Elastic C
     - [What does a Kubernetes cluster consist of?](#what-does-a-kubernetes-cluster-consist-of)
     - [What is Amazon EKS?](#what-is-amazon-eks)
     - [Getting Started](#getting-started)
+        - [Setup](#setup)
+        - [Deployments](#deployments)
+        - [Services](#services)
+        - [Ingress](#ingress)
+        - [Helm](#helm)
+        - [Troubleshooting](#troubleshooting)
+        - [Monitoring](#monitoring)
 
 <!-- /TOC -->
 
@@ -55,23 +62,30 @@ The customer can view and is responsible for the worker nodes.
 
 This tutorial contains the following sections:  
 
+### Setup
 [Setup](1-Setup/setup.md "Setup")  
 How to set up an EKS cluster and set up admin tooling
 
+### Deployments
 [Deployments](2-Deployments/deployments.md "Deployments")  
 Deploying applications
 
+### Services
 [Services](3-Services/services.md "Services")  
 Exposing deployments  
 
+### Ingress
 [Ingress](4-Ingress/ingress.md "Ingress")  
 TLS termination and path routing  
 
+### Helm
 [Helm](5-Helm/helm.md "Helm")  
 Helm: a ackage manager for Kubernetes
 
+### Troubleshooting
 [Troubleshooting](6-Troubleshooting/troubleshooting.md "Troubleshooting")  
 Cluster and application troubleshooting
 
+### Monitoring
 [Monitoring](7-Monitoring/monitoring.md "Monitoring")  
 Kubernetes monitoring
