@@ -64,7 +64,7 @@ This tutorial contains the following sections:
 
 ### Setup
 [Setup](1-Setup/setup.md "Setup")  
-How to set up an EKS cluster and set up admin tooling
+How to set up an EKS cluster and configure admin tooling
 
 ### Deployments
 [Deployments](2-Deployments/deployments.md "Deployments")  
