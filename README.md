@@ -80,7 +80,7 @@ TLS termination and path routing
 
 ### Helm
 [Helm](5-Helm/helm.md "Helm")  
-Helm: a ackage manager for Kubernetes
+Helm: a package manager for Kubernetes
 
 ### Troubleshooting
 [Troubleshooting](6-Troubleshooting/troubleshooting.md "Troubleshooting")  
