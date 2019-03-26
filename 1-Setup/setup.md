@@ -66,8 +66,9 @@ This method consists of deploying two CloudFormation stacks. The first stack cre
 ## 2.2. Terraform method
 
 The AWS terraform provider provides resources for managing EKS clusters.  
-An example of using terraform to create an EKS cluster can be found here:  
-[eks-terraform](eks-terraform/)
+This tutorial contains example terraform templates in this section:  
+[Example terraform templates can be found here]
+Your aws provider information will be taken from your local aws cli setup
 
 ## 2.3. eksctl method
 
