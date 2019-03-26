@@ -83,10 +83,10 @@ Authentication secrets are stored in $HOME/.kube/config
 
 ## AWS Getting Started or eksctl methods  
 
-Update your local authentication file:
-`aws eks update-kubeconfig --name clustername`
-Test your connection to the cluster:  
-`kubectl cluster-info`
+The aws cli will update the local authentication secrets with this command:  
+`aws eks update-kubeconfig --name clustername`  
+Test your connection to the cluster:    
+`kubectl cluster-info`  
 
 ## Terraform: 
 
