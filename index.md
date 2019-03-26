@@ -33,7 +33,7 @@ With container orchestration we can
 
 Kubernetes provides a standard interface to orchestrate containers.
 
-## What does a Kubernetes cluster consist of
+## What does a Kubernetes cluster consist of?
 
 For this workshop, only Master nodes, and Worker nodes will be discussed.
 

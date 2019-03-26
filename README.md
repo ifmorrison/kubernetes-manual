@@ -7,7 +7,7 @@ This repository provides an overview and introductory tutorial for AWS Elastic C
 - [Kubernetes Manual](#kubernetes-manual)
     - [What is Kubernetes?](#what-is-kubernetes)
     - [Why do I need a container orchestration platform?](#why-do-i-need-a-container-orchestration-platform)
-    - [What does a Kubernetes cluster consist of](#what-does-a-kubernetes-cluster-consist-of)
+    - [What does a Kubernetes cluster consist of?](#what-does-a-kubernetes-cluster-consist-of)
     - [What is Amazon EKS?](#what-is-amazon-eks)
     - [Getting Started](#getting-started)
 
@@ -33,7 +33,7 @@ With container orchestration we can
 
 Kubernetes provides a standard interface to orchestrate containers.
 
-## What does a Kubernetes cluster consist of
+## What does a Kubernetes cluster consist of?
 
 For this workshop, only Master nodes, and Worker nodes will be discussed.
 
